@@ -1,0 +1,39 @@
+Arten der Konfiguration vom Spring Container:
+
+
+XML file                : veraltet
+Annotations + XML file  : modern
+Java code               : modern
+
+
+
+🏠 Eselsbrücke für IoC und DI:
+Stell dir vor, du ziehst in eine WG ein.
+
+Bei IoC kümmert sich der Vermieter (Spring) um alles: Möbel, WLAN, Strom. Du musst dich nicht drum kümmern. Der Vermieter hat die Kontrolle.
+Bei DI bekommst du automatisch das, was du brauchst: Bett, Tisch, Internet. Du fragst nicht aktiv danach – es wird dir einfach geliefert.
+Kurz:
+IoC = Vermieter entscheidet & organisiert.
+DI = Möbel und Zeug stehen einfach da – ready to use.
+
+## Beispiel:
+@Component
+public class Dog implements Pet {
+    public void say() {
+        System.out.println("Wuff Wuff!");
+    }
+}
+
+@Component
+public class Person {
+    private final Pet pet;
+
+    @Autowired
+    public Person(Pet pet) {  // Spring gibt das Pet rein – DAS ist Dependency Injection
+        this.pet = pet;
+    }
+}
+
+
+IoC : Spring erstellt die Objekte (Dog und Person). Du machst kein new mehr.
+DI  : Spring schiebt das Pet direkt in den Konstruktor von Person, weil @Autowired sagt: "Gib mir ein Pet!"

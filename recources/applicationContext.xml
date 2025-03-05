@@ -10,6 +10,6 @@
     <!-- Anotation Anbindung
     Singleton Bean, by default-->
     <context:component-scan base-package="org.example.spring_introduction"/>
-
+    <!--<context:property-placeholder location="classpath:myApp.properties"></context:property-placeholder>-->
 
 </beans>

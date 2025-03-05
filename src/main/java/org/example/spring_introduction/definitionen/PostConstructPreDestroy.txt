@@ -1,0 +1,17 @@
+Ab Java 11, ohne der Entwicklung auf Maven oder auf NetBeans, ist ein Jar File notwendig
+um die Annotationen @PostConstruct und @PreDestroy für (init und destroy Methoden) zu nutzen.
+
+https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api/1.3.2
+
+File\ProjectStructure\Libraries + Location of Jar File
+
+
+
+Mit Maven, im "pom.xml" file die dependency hinzufügen und Maven - > Reload Project.
+
+<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+<dependency>
+    <groupId>javax.annotation</groupId>
+    <artifactId>javax.annotation-api</artifactId>
+    <version>1.3.2</version>
+</dependency>

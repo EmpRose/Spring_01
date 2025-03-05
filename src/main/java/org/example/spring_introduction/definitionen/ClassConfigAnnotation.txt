@@ -1,0 +1,28 @@
+Es ist möglich ohne einer .xml Datei zu arbeiten um Beans zu erstellen.
+
+Diese Art scannt nicht das Package auf der Suche nach Beans, die Beans werden in der Config Classe beschrieben.
+
+Es wird nicht @Autowired genutzt, Die Abhängigkeiten werden manuel gesetzt.
+
+Der Methodenname ist die Bean id
+
+Die Annotation @Bean, empfängt alle Anfragen an den Bean und reguliert dessen Erzeugung.
+
+
+
+
+
+@Configuration
+public class MyConfig{
+@Bean
+public Pet cat(){
+    return newCat();
+}
+
+@Bean
+public Person myPerson(){
+    return new Person(cat());
+}
+}
+
+}

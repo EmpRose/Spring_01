@@ -1,8 +1,14 @@
 package org.example.spring_introduction;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("dogBean")
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+//@Component("dogBean")
+//@Scope("prototype")
+@Scope("singleton")
 public class Dog implements Pet{
 
     public Dog(){
@@ -12,4 +18,16 @@ public class Dog implements Pet{
     public void say(){
         System.out.println("Bow-Wow");
     }
+
+    // Ab Java 11, nur mit Maven nutzbar https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api/1.3.2
+    //@PostConstruct
+    //public void init(){
+    //    System.out.println("Class Dog: init Method");
+    //}
+
+    // Ab Java 11, nur mit Maven nutzbar https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api/1.3.2
+    //@PreDestroy
+    //public void destroy(){
+    //    System.out.println("Class Dog: destroy Method");
+    //}
 }

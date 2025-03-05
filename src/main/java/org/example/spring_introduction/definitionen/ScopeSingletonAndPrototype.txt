@@ -1,0 +1,15 @@
+BeanScope
+
+@Scope("singleton")
+singletone - default scope.
+-Wird nach dem Auslesen des ConfigFiles von Spring erstellt.
+-Ist für alle verfügbar, wer ihn im Spring Container erfragt
+-Passt zu "stateless" Objekten
+
+@Scope("prototype")
+prototype
+-Wird erst nach einer Anfrage zum SpringContainer mit der "getBean" Methode erstellt
+-Wird für jede Anfrage zusätzlich neu erzeugt (Verschiedene Objekte/ Referenzen)
+-Passt zu "stateful" Objekten
+
+
